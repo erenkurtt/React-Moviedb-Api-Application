@@ -37,7 +37,7 @@ nextPageMovie= (e) => {
     tableMovie :[]
   });
 
-  for(var i=numbFirst; i<10 *numb  +2 ; i++){
+  for(var i=numbFirst; i<10 *numb  +10 ; i++){
     axios.get('https://api.themoviedb.org/3/movie/'+ this.state.movieIds[i].id +'?api_key=ac99407995cec7c740f931e045bcb06b&language=en-us')
     .then(({data}) => {
       if(data != null && data.poster_path != null){
@@ -48,6 +48,9 @@ nextPageMovie= (e) => {
           }
         )
         );
+      }
+      else{
+        i--;
       }
       
     })
@@ -65,7 +68,7 @@ nextPageSerie= (e) => {
     tableSerie : []
   });
 
-  for(var i=numbFirst; i<10 *numb  +2  ; i++){
+  for(var i=numbFirst; i<10 *numb  +10  ; i++){
     axios.get('https://api.themoviedb.org/3/tv/'+ this.state.serieIds[i].id +'?api_key=ac99407995cec7c740f931e045bcb06b&language=en-us')
     .then(({data}) => {
       if(data != null && data.poster_path != null){
@@ -77,6 +80,9 @@ nextPageSerie= (e) => {
         )
         );
       }
+      else{
+        i--;
+      }
       
     })
     
@@ -87,7 +93,7 @@ nextPageSerie= (e) => {
 
 componentDidMount() {
   
-  for(var i=this.state.pageCount; i<10 *this.state.pageNumb +2 ; i++){
+  for(var i=this.state.pageCount; i<10 *this.state.pageNumb +10 ; i++){
     axios.get('https://api.themoviedb.org/3/movie/'+ this.state.movieIds[i].id +'?api_key=ac99407995cec7c740f931e045bcb06b&language=en-us')
     .then(({data}) => {
       if(data != null){
@@ -99,13 +105,16 @@ componentDidMount() {
         )
         );
       }
+      else{
+        i--;
+      }
       console.log(data);
     })
     
    }
 
    
-   for(var j=this.state.pageCount; j<=10 * this.state.pageNumb  +2 ; j++){
+   for(var j=this.state.pageCount; j<10 * this.state.pageNumb  +10 ; j++){
     axios.get('https://api.themoviedb.org/3/tv/'+ this.state.serieIds[j].id +'?api_key=ac99407995cec7c740f931e045bcb06b&language=en-us')
     .then(({data}) => {
       if(data != null && data.poster_path != null){
@@ -115,6 +124,9 @@ componentDidMount() {
           }
         )
         );
+      }
+      else{
+        i--;
       }
       console.log(data);
     })
