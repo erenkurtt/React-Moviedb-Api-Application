@@ -159,9 +159,9 @@ h3{
     z-index: 99;
     border-radius: 10px;
     position: fixed;
-    opacity: 0.97;
+    opacity: 1;
     height: 90%;
-    overflow: scroll;
+    overflow-y:hidden;
     
 }
 .detailed-movie img{
@@ -215,9 +215,9 @@ h3{
     z-index: 99;
     border-radius: 10px;
     position: fixed;
-    opacity: 0.97;
+    opacity: 1;
     height: 90%;
-    overflow: scroll;
+    overflow-y: hidden;
 }
 .detailed-serie img{
     width: 100%;
@@ -234,29 +234,30 @@ h3{
 .counter-main-left{
     
     font-size: 1rem;
-    padding: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding: 3%;
+    /* padding: 1rem;
+     */
 
 }
 .counter-main-right{
     
     font-size: 1rem;
-    padding: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding: 3%;
 
 }
 .counter-elements{
     font-size: 1rem;
-    padding: 1rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    padding: 3%;
+    
 }
 .counters{
    
-    margin-left: 20%;
-    
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
   
 }
 
@@ -282,7 +283,7 @@ h3{
         margin-right: 5% ;
         top: 5%;
         height:90%;
-        overflow: scroll;
+        overflow-y: scroll;
         opacity: 1;
     }
     .detailed-movie .close{
@@ -307,7 +308,7 @@ h3{
         grid-template-columns: auto;
         top: 5%;
         height:90%;
-        overflow: scroll;
+        overflow-y: scroll;
         opacity: 1;
     }
     .detailed-movie .close{
@@ -341,8 +342,12 @@ h3{
         width: 50%;
         margin: 5%;
     }
+    .counters{
+        margin-left: 20%;
+        margin-right: 20%;
+    }
 }
-@media screen and (max-width : 550px ){
+@media screen and (max-width : 560px ){
     .main{
         display: grid;
         grid-template-columns: auto;
@@ -353,7 +358,7 @@ h3{
         grid-template-columns: auto;
         top: 5%;
         height:90%;
-        overflow: scroll;
+        overflow-y: scroll;
         opacity: 1;
     }
     .detailed-movie .close{
@@ -376,14 +381,7 @@ h3{
         width: 100%;
         border-radius: 8px  0px  0px 0px ;
     }
-    .counter-main-left , .counter-main-right, .counter-elements{
-        font-size: 1rem;
-        padding: 5px;
-        
-    }
-    .counters{
-        margin-left: 10%;
-    }
+    
     .menu{
         display: grid;
         grid-template-columns: 33% 33% 33%;
@@ -394,15 +392,41 @@ h3{
         width: 70%;
         
     }
+    
+    .counters{
+        margin-left: 12%;
+        margin-right: 12%;
+    }
 
 }
 
-@media screen and ( max-width : 400px ){
+@media screen and ( max-width : 440px ){
     .main{
         display: grid;
         grid-template-columns: auto;
         margin-left: 10%;
         margin-right:10%;
+    }
+    .counter-main-left{
+    
+        font-size: 1rem;
+        padding: 2%;
+    
+    }
+    .counter-main-right{
+    
+        font-size: 1rem;
+        padding: 2%;
+    
+    }
+    .counter-elements{
+        font-size: 1rem;
+        padding: 2%;
+        
+    }
+    .counters{
+        margin-left: 10%;
+        margin-right: 10%;
     }
 }
 
@@ -413,7 +437,7 @@ h3{
         grid-template-columns: auto;
         top: 5%;
         height:90%;
-        overflow: scroll;
+        overflow-y: scroll;
         opacity: 1;
     }
     .detailed-movie .close{
